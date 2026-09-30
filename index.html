@@ -26,6 +26,19 @@
        itself renders, since it's the browser's UI, not the page's. -->
   <meta name="theme-color" content="#202020">
 
+  <!-- The page itself (html/body) defaults to a white background until
+       Flutter's own canvas paints over it, and that default page is what
+       any translucent status bar overlay shows through in the meantime --
+       causing a white flash on load and a white band bleeding through the
+       status bar area even after the app is dark everywhere else. Setting
+       it here up front removes both. -->
+  <style>
+    html, body {
+      background: #202020;
+      height: 100%;
+    }
+  </style>
+
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
